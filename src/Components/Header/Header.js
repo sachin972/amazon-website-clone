@@ -2,15 +2,24 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import './Header.css';
 import { Input, InputAdornment } from '@material-ui/core';
-import { Search, ShoppingCart } from '@material-ui/icons';
+import { LocationOn, Search, ShoppingCart } from '@material-ui/icons';
+
+import Home from '../Home/Home';
+
 
 function Header(){
     const count = 0;
     return (
+        <>
         <div className='header'>
             <nav>
                 <Icon icon='uim:amazon' width='3em' color='white' />
                 
+                <div className='location'>
+                    <LocationOn className='innerComp' />
+                    <b className='innerComp'>Get Location</b>
+                </div>
+
                 <Input className='input' endAdornment={
                     <InputAdornment position='end'>
                         <div className='coloring'><Search /></div>
@@ -42,6 +51,8 @@ function Header(){
 
             </nav>
         </div>
+        <Home />
+        </>
     );
 }
 

@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
-import Header from './Components/Header';
-import Home from './Components/Home';
+import Header from './Components/Header/Header';
+import Home from './Components/Home/Home.js';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 function App() {
@@ -9,7 +9,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+        {/* <Route path='/home' component={Home} /> */}
           <Route path='/' Component={Header} />
+          
         </Routes>
       </BrowserRouter>
     </div>
