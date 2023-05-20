@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Icon } from '@iconify/react';
 import './Header.css';
 import { Input, InputAdornment } from '@material-ui/core';
@@ -8,7 +8,8 @@ import Home from '../Home/Home';
 
 
 function Header(){
-    const count = 0;
+    // const count = 0;
+    const [count, setCount] = useState(0);
     return (
         <>
         <div className='header'>

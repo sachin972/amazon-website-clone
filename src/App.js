@@ -1,8 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header';
-import Home from './Components/Home/Home.js';
+// import Home from './Components/Home/Home.js';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import Selection from './Components/Selection/Selection';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Routes>
         {/* <Route path='/home' component={Home} /> */}
           <Route path='/' Component={Header} />
-          
+          <Route path='/selection' Component={Selection} />
         </Routes>
       </BrowserRouter>
     </div>
