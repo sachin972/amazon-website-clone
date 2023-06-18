@@ -17,29 +17,54 @@ export default function Home(){
                     />
                     
                     <div className="home_row">
-                        <Product
-                            id='1'
-                            title='Something'
-                            rating={5}
-                            price={29.99}
-                            image='https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_B01,204,203,200_.jpg'
+                    <Product 
+                            id = '4'
+                            title = "Smart Watch for Men Women(Answer/Make Call), Alexa Built-in,1.7'Fitness Watch with Heart Rate SpO2 Sleep Monitor 60 Sports IP68 Waterproof Activity Trackers and Smartwatches for iPhone Android Phones"
+                            price = {59.99}
+                            rating = {4}
+                            image = 'https://m.media-amazon.com/images/I/71a7Z16vOqL._AC_UY218_.jpg'
                         />
+                        
                         <Product 
                             id='2'
-                            title="Kenwood kMix Stand Mixer for Baking, Sylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+                            title="Panti Stand Mixer, 8.5 Qt. 660W 6+P Speed Kitchen Aid with Dough Hooks, Whisk, Beater and Suction Cup Bottom Splash Guard Attachments for Baking Bread, Cookie, Kneading, Dishwasher Safe, Silver"
                             price={239.0}
                             rating={4}
-                            image='https://images-na.ssl-images-amazon.com/images/I/810%2BGNdkzKL._AC_SX450_.jpg'
+                            image='https://m.media-amazon.com/images/I/71ezyIKdXPL._AC_SX569_.jpg'
                             
                         />
                     </div>
                     <div className='home_row'>
-                        <Product />
-                        <Product />
-                        <Product />
+                        <Product 
+                            id = '3'
+                            title='The Right Call: What sports teach us about work and Life'
+                            price={18.19}
+                            rating={4}
+                            image='https://m.media-amazon.com/images/I/51Lcnf0gC3L._AC_SY200_.jpg'
+                        />
+                        <Product
+                            id='1'
+                            title='One True Loves: A Novel'
+                            rating={5}
+                            price={31.99}
+                            image='https://m.media-amazon.com/images/I/41gvyEMDoML.jpg'
+                        />
+                        <Product 
+                            id= '5'
+                            title = 'Apple AirPods (2nd Generation) Wireless Earbuds with Lightning Charging Case Included. Over 24 Hours of Battery Life, Effortless Setup. Bluetooth Headphones for iPhone'
+                            rating ={4}
+                            price={8.99}
+                            image ='https://m.media-amazon.com/images/I/61Zh467pKjL._AC_SX679_.jpg'
+                        />
                     </div>
                     <div className='home_row'>
-                        <Product />
+                        <Product
+                            id='6'
+                            title='Kingston NV2 250G M.2 2280 NVMe Internal SSD | PCIe 4.0 Gen 4x4 | Up to 3000 MB/s | SNV2S/250G'
+                            rating={5}
+                            price={20.99}
+                            image='https://m.media-amazon.com/images/I/71NfMZKkpQL._AC_SX466_.jpg'
+                        />
                     </div>
                 </div>
                 
