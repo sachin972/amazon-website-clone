@@ -21,7 +21,7 @@ export default function Header(){
 
     return <div className="header">
             <Link to='/'>
-                <img className="header_logo" src="https://www.pngfind.com/pngs/m/70-701602_amazon-prime-logo-png-wwwimgkidcom-the-image-kid.png" alt='some_image' />
+                <img className="header_logo" src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" alt='some_image' />
             </Link>
             <div className="header_search">
                 <input className = "header_search_input" type="text" />
