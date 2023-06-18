@@ -1,60 +1,56 @@
-import React, {useState} from 'react';
-import { Icon } from '@iconify/react';
+import React from 'react';
 import './Header.css';
-import { Input, InputAdornment } from '@material-ui/core';
-import { LocationOn, Search, ShoppingCart } from '@material-ui/icons';
+import SearchIcon from '@material-ui/icons/Search';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import {Link} from 'react-router-dom';
+import { useStateValue } from '../../StateProvider';
+import { auth } from '../../Firebase';
 
-import Home from '../Home/Home';
+export default function Header(){
 
+    const [{basket, user}, dispatch] = useStateValue();
 
-function Header(){
-    // const count = 0;
-    const [count, setCount] = useState(0);
-    return (
-        <>
-        <div className='header'>
-            <nav>
-                <Icon icon='uim:amazon' width='3em' color='white' />
-                
-                <div className='location'>
-                    <LocationOn className='innerComp' />
-                    <b className='innerComp'>Get Location</b>
+    const handleClick = () => {
+        if(user){
+            auth.signOut();
+        }
+        else{
+            
+        }
+    }
+
+    return <div className="header">
+            <Link to='/'>
+                <img className="header_logo" src="https://www.pngfind.com/pngs/m/70-701602_amazon-prime-logo-png-wwwimgkidcom-the-image-kid.png" alt='some_image' />
+            </Link>
+            <div className="header_search">
+                <input className = "header_search_input" type="text" />
+                <SearchIcon className="header_search_icon" />
+            </div>
+            <div className="header_nav">
+                <Link to={! user && '/login'}>
+                    <div onClick={handleClick} className="header_option">
+                        <span className="header_option_one"> Hello {user ? user.email : 'Guest'} </span>
+                        <span className="header_option_two"> {user ? 'Sign out' : 'Sign In'} </span>
+                    </div>
+                </Link>
+                <div className="header_option">
+                    <span className="header_option_one"> Returns </span>
+                    <span className="header_option_two"> & Orders </span>
+                </div>
+                <div className="header_option">
+                    <span className="header_option_one"> Your </span>
+                    <span className="header_option_two"> Prime </span>
                 </div>
 
-                <Input className='input' endAdornment={
-                    <InputAdornment position='end'>
-                        <div className='coloring'><Search /></div>
-                    </InputAdornment>
-                } />
-                {/* <div className='inputImage'><input className='input' type='text' />
-                <><Search className='inner' /></>
-                </div> */}
-                <div className='navigation'>
-                    <div className='items'>
-                        <a Link=''>Sign In</a>
-                    </div>
-                    <div className='items'>
-                        <a Link=''>Returns & <b>Orders</b></a>
-                    </div>
-                    <div className='items'>
-                        <a Link=''>Your <b>Prime</b></a>
-                    </div>
-                    <div className='items'>
-                        {/* <div className='inner'> */}
-                            <ShoppingCart />
-                        {/* </div> */}
-                        {/* <div className='inner'> */}
-                            <b>&nbsp;{count}</b>
-                        {/* </div> */}
-                    </div>
-                    
-                </div>
+                <Link to='/checkout'>
 
-            </nav>
-        </div>
-        <Home />
-        </>
-    );
+                    <div className="header_option_basket">
+                        <ShoppingBasketIcon />
+                        <span className="header_option_two header_basket_count">{basket.length}</span>
+                    </div>
+                </Link>
+
+            </div>
+    </div>;
 }
-
-export default Header;
